@@ -1,5 +1,6 @@
 import './Product.scss'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Product = ({
   name,
@@ -12,18 +13,17 @@ const Product = ({
   rating,
   numReviews,
   description,
-  
 }) => {
   return (
     <>
       <div key={slug} className='product'>
-        <a href={`/product/${slug}`}>
+        <Link to={`/product/${slug}/${name}`}>
           <img src={image} alt={name} />
-        </a>
+        </Link>
         <div className='product-info'>
-          <a href={`/product/${slug}`}>
+          <Link to={`/product/${slug}/${name}`}>
             <p>{name}</p>
-          </a>
+          </Link>
           <p>${price}</p>
           <button>Add to cart</button>
         </div>
